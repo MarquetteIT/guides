@@ -334,7 +334,7 @@ tbody tr.ok{ background:var(--green-bg); }
 .blinks .on{ background:var(--red); }
 .blinks .off{ background:#fff; border:1.5px solid var(--steel-soft); }
 .blinks .gap{ width:14px; }
-tr.ok .blinks .on{ background:var(--green); }
+tr.ok .blinks .on{ background:var(--red); }
 
 td.meaning b{ display:block; color:var(--ink); font-size:14.5px; margin-bottom:3px; }
 td.meaning span{ color:var(--steel); font-size:13.5px; }
