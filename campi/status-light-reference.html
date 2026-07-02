@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CamPi Camera — Status Light Reference</title>
+<link rel="stylesheet" href="assets/campi-guide.css">
+</head>
+<body>
+
+<div class="sheet">
+  <div class="toolbar">
+    <button class="print-btn" id="printBtn" type="button">Print this card</button>
+  </div>
+
+  <header>
+    <p class="eyebrow">Marquette Transportation &middot; Field Reference</p>
+    <h1>Status Light<br>Reference</h1>
+    <p class="subhead">What the small red light on the camera enclosure is telling you, and what to do about it.</p>
+  </header>
+
+  <div class="lights">
+    <div class="light-card">
+      <div class="dot green"></div>
+      <div>
+        <h3>Button ring &mdash; green</h3>
+        <p>Around the push-button on the <strong>bottom</strong> of the box. Green means the unit has power. That's all it tells you &mdash; see the mounting card for setup.</p>
+      </div>
+    </div>
+    <div class="light-card">
+      <div class="dot red"></div>
+      <div>
+        <h3>Status light &mdash; red</h3>
+        <p>On <strong>top</strong> of the enclosure, inline with the small Wi-Fi dome antenna. This is the one on this card &mdash; it reports the camera system's health. In direct sunlight it can be hard to see &mdash; cup a hand over it to check.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Pattern</th>
+          <th>What it means</th>
+          <th>What to do</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ok">
+          <td>
+            <div class="pattern-name">Solid &mdash; steady on</div>
+            <div class="blinks"><span class="on"></span></div>
+          </td>
+          <td class="meaning"><b>Normal</b><span>Recording, camera reachable, storage OK, temperature normal.</span></td>
+          <td class="action">No action needed.</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="pattern-name">Slow, even blink (~1s)</div>
+            <div class="blinks"><span class="on"></span><span class="gap"></span><span class="off"></span><span class="gap"></span><span class="on"></span><span class="gap"></span><span class="off"></span></div>
+          </td>
+          <td class="meaning"><b>Degraded</b><span>Camera and recording are fine, but the unit has no vessel Wi-Fi/network connection.</span></td>
+          <td class="action">No urgent action. Contact IT if it stays this way for more than a day.</td>
+        </tr>
+        <tr class="fault">
+          <td>
+            <div class="pattern-name">2 quick flashes, pause, repeat</div>
+            <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="gap"></span><span class="gap"></span></div>
+          </td>
+          <td class="meaning"><b>Fault &mdash; camera unreachable</b><span>The control box can't reach the camera itself.</span></td>
+          <td class="action">Contact IT.</td>
+        </tr>
+        <tr class="fault">
+          <td>
+            <div class="pattern-name">3 quick flashes, pause, repeat</div>
+            <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="gap"></span></div>
+          </td>
+          <td class="meaning"><b>Fault &mdash; recording stalled</b><span>Camera is reachable, but the video isn't writing correctly.</span></td>
+          <td class="action">Contact IT.</td>
+        </tr>
+        <tr class="fault">
+          <td>
+            <div class="pattern-name">4 quick flashes, pause, repeat</div>
+            <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span></div>
+          </td>
+          <td class="meaning"><b>Fault &mdash; storage offline</b><span>Nothing is being recorded right now.</span></td>
+          <td class="action">Contact IT right away.</td>
+        </tr>
+        <tr class="fault">
+          <td>
+            <div class="pattern-name">5 quick flashes, pause, repeat</div>
+            <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span></div>
+          </td>
+          <td class="meaning"><b>Fault &mdash; running hot</b><span>The camera electronics or enclosure are over temperature.</span></td>
+          <td class="action">Check nothing is blocking airflow or the box isn't in direct sun, then contact IT.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#5B6B74" stroke-width="1.6"/><path d="M10 6.5V11" stroke="#5B6B74" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="13.6" r="0.9" fill="#5B6B74"/></svg>
+    <p>A brief double- or triple-flash right before the unit reboots or shuts down (for example, right after someone presses the button) is normal and isn't a fault &mdash; it settles once the unit finishes restarting.</p>
+  </div>
+
+  <footer>
+    <div class="rule"></div>
+    <p>Not sure what you're seeing, or a fault won't clear? Contact IT: <a href="mailto:esmith@marquettetrans.com">esmith@marquettetrans.com</a></p>
+    <p class="also">See also: <a href="mounting-guide.html">Mounting Card</a></p>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+</script>
+</body>
+</html>
