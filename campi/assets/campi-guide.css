@@ -334,6 +334,8 @@ tbody tr.ok{ background:var(--green-bg); }
 .blinks .on{ background:var(--red); }
 .blinks .off{ background:#fff; border:1.5px solid var(--steel-soft); }
 .blinks .gap{ width:14px; }
+/* The status LED is a single red-only bare LED (hardware can't emit green) — every
+   pattern's "on" dot stays red; only the row tint (.ok/.fault) signals good vs. bad. */
 tr.ok .blinks .on{ background:var(--red); }
 
 td.meaning b{ display:block; color:var(--ink); font-size:14.5px; margin-bottom:3px; }

@@ -3,8 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CamPi Camera — Status Light Reference</title>
+<title>CamPi Camera — Status Light Reference (1-page)</title>
 <link rel="stylesheet" href="assets/campi-guide.css">
+<style>
+  /* Compact single-page variant: same tokens/fonts/classes as the screen version, just
+     tightened everywhere so the whole card fits one printed Letter page. */
+  @page{ size:letter; margin:0.4in; }
+  body{ font-size:14.5px; line-height:1.42; }
+  .sheet{ max-width:760px; }
+  header{ padding:20px 28px 16px; }
+  header::after{ display:none; }
+  .eyebrow{ font-size:11px; margin-bottom:4px; }
+  h1{ font-size:27px; max-width:none; margin-bottom:5px; }
+  .subhead{ font-size:13.5px; max-width:62ch; }
+  .toolbar{ padding:10px 28px 0; }
+  .lights{ padding:16px 28px 0; gap:12px; }
+  .light-card{ padding:12px 14px; gap:12px; }
+  .dot{ width:16px; height:16px; margin-top:1px; }
+  .light-card h3{ font-size:13px; margin-bottom:4px; }
+  .light-card p{ font-size:12px; line-height:1.35; }
+  .table-wrap{ margin:16px 28px 0; }
+  thead th{ padding:8px 14px; font-size:10.5px; }
+  tbody td{ padding:9px 14px; font-size:12.5px; }
+  .pattern-name{ font-size:12.5px; margin-bottom:4px; }
+  .blinks .on, .blinks .off{ width:8px; height:8px; }
+  .blinks .gap{ width:12px; }
+  td.meaning b{ font-size:12.5px; margin-bottom:2px; }
+  td.meaning span{ font-size:11.5px; }
+  .note{ margin:16px 28px 0; padding:12px 16px; gap:10px; }
+  .note svg{ width:18px; height:18px; }
+  .note p{ font-size:12px; }
+  footer{ padding:18px 28px 0; font-size:12px; }
+  footer .rule{ margin-bottom:12px; }
+</style>
 </head>
 <body>
 
@@ -15,7 +46,7 @@
 
   <header>
     <p class="eyebrow">Marquette Transportation &middot; Field Reference</p>
-    <h1>Status Light<br>Reference</h1>
+    <h1>Status Light Reference</h1>
     <p class="subhead">What the small red light on the camera enclosure is telling you, and what to do about it.</p>
   </header>
 
@@ -24,14 +55,14 @@
       <div class="dot green"></div>
       <div>
         <h3>Button ring &mdash; green</h3>
-        <p>Around the push-button on the <strong>bottom</strong> of the box. Green means the unit has power. That's all it tells you &mdash; see the mounting card for setup.</p>
+        <p>Bottom of the box. Green means the unit has power &mdash; see the mounting card for setup.</p>
       </div>
     </div>
     <div class="light-card">
       <div class="dot red"></div>
       <div>
         <h3>Status light &mdash; red</h3>
-        <p>On <strong>top</strong> of the enclosure, inline with the small Wi-Fi dome antenna. This is the one on this card &mdash; it reports the camera system's health. In direct sunlight it can be hard to see &mdash; cup a hand over it to check.</p>
+        <p>Top of the enclosure, by the Wi-Fi antenna. Reports system health &mdash; this card. Hard to see in direct sun; cup a hand over it.</p>
       </div>
     </div>
   </div>
@@ -106,7 +137,7 @@
   <footer>
     <div class="rule"></div>
     <p>Not sure what you're seeing, or a fault won't clear? Contact IT: <a href="mailto:esmith@marquettetrans.com">esmith@marquettetrans.com</a></p>
-    <p class="also">See also: <a href="mounting-guide.html">Mounting Card</a> &middot; <a href="status-light-reference-print.html">single-page printable version</a></p>
+    <p class="also">See also: <a href="mounting-guide.html">Mounting Card</a> &middot; <a href="status-light-reference.html">full-size version</a></p>
   </footer>
 </div>
 
