@@ -16,6 +16,13 @@
     letter-spacing:0.03em; font-size:18px; margin:0 0 6px; color:var(--ink);
   }
   .link-card p{ margin:0; color:var(--steel); font-size:14.5px; }
+  .link-card.featured{ border-color:var(--amber); border-width:1.5px; }
+  /* .link-card is a <div> when it needs a second, independent link (avoids nesting <a> in <a>) */
+  a.link-card{ text-decoration:none; }
+  div.link-card{ padding:0; }
+  div.link-card a.link-hit{ display:block; padding:18px 20px; text-decoration:none; }
+  .link-sub{ padding:0 20px 16px; margin-top:2px; font-size:13px; }
+  .link-sub a{ color:var(--ink); font-weight:600; }
 </style>
 </head>
 <body>
@@ -28,14 +35,21 @@
   </header>
 
   <div class="links">
+    <a class="link-card featured" href="field-guide.html">
+      <h2>Field Guide (print, 2 pages)</h2>
+      <p>Mounting steps + status light reference in one document &mdash; page 1 is the mounting card, page 2 the light reference. This is the one to print and hand out.</p>
+    </a>
     <a class="link-card" href="mounting-guide.html">
       <h2>Mounting Card</h2>
       <p>How to clamp the RAM Tough-Claw to a handrail, aim the camera, and confirm it's powered.</p>
     </a>
-    <a class="link-card" href="status-light-reference.html">
-      <h2>Status Light Reference</h2>
-      <p>What the red status light's blink pattern means, and what to do about it.</p>
-    </a>
+    <div class="link-card">
+      <a class="link-hit" href="status-light-reference.html">
+        <h2>Status Light Reference</h2>
+        <p>What the red status light's blink pattern means, and what to do about it.</p>
+      </a>
+      <p class="link-sub">Also available as a <a href="status-light-reference-print.html">single-page printable</a>.</p>
+    </div>
   </div>
 
   <footer>

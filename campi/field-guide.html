@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CamPi Camera — Field Guide</title>
+<link rel="stylesheet" href="assets/campi-guide.css">
+<style>
+  /* Combined print document: mounting card + status light reference, one file, one print
+     job. Each <section class="page"> is compacted to fit one Letter page on its own; a CSS
+     page break forces the light-reference section onto physical page 2. On screen the two
+     sections just stack, with a small divider marking where the page break falls. */
+  @page{ size:letter; margin:0.4in; }
+  body{ background:var(--deck); }
+  .doc-toolbar{
+    display:flex; justify-content:center; padding:14px 0;
+  }
+  .page{
+    max-width:760px; margin:0 auto; padding:0;
+    background:var(--panel);
+    box-shadow:0 1px 3px rgba(22,35,44,0.12);
+  }
+  .page + .page{ margin-top:0; }
+  .page-break{ break-before:page; }
+  .page-divider{
+    max-width:760px; margin:18px auto; display:flex; align-items:center; gap:10px;
+    color:var(--steel-soft); font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase;
+  }
+  .page-divider::before, .page-divider::after{ content:""; flex:1; border-top:1.5px dashed var(--steel-soft); }
+
+  /* ---- shared compact tuning for both pages ---- */
+  body{ font-size:12.5px; line-height:1.32; }
+  header{ padding:14px 26px 11px; }
+  header::after{ display:none; }
+  .eyebrow{ font-size:9.5px; margin-bottom:3px; }
+  h1{ font-size:21px; max-width:none; margin-bottom:3px; }
+  .subhead{ font-size:11.5px; max-width:64ch; }
+  .toolbar{ display:none; }
+  footer{ padding:10px 26px 0 26px; font-size:10px; }
+  footer .rule{ margin-bottom:7px; }
+  .page > footer{ padding-bottom:12px; }
+
+  /* ---- mounting page ---- */
+  .intro{ margin:8px 26px 0; padding:7px 14px; gap:10px; }
+  .intro svg{ width:22px; height:22px; }
+  .steps{ padding:8px 26px 0; gap:4px; }
+  .step{ grid-template-columns:34px 1fr; }
+  .step-num{ font-size:14px; }
+  .step-body{ padding:5px 12px 6px; }
+  .step h2{ font-size:12px; margin-bottom:2px; }
+  .step p{ margin-bottom:3px; }
+  .photo-ref{ margin-top:3px; padding:3px 6px; gap:5px; }
+  .photo-ref svg{ width:12px; height:12px; }
+  .photo-ref .label{ font-size:9px; }
+  .caution{ margin-top:3px; padding:4px 8px; gap:5px; }
+  .caution svg{ width:12px; height:12px; }
+  .caution p{ font-size:10.5px; }
+  .caution .cap{ font-size:9px; margin-bottom:1px; }
+  .power-check .indicator{ margin-top:3px; padding:4px 8px; gap:6px; }
+  .ring{ width:15px; height:15px; border-width:3px; }
+  .indicator .txt{ font-size:10.5px; }
+
+  /* ---- status light page ---- */
+  .lights{ padding:14px 26px 0; gap:10px; }
+  .light-card{ padding:10px 12px; gap:10px; }
+  .dot{ width:15px; height:15px; }
+  .light-card h3{ font-size:12px; margin-bottom:3px; }
+  .light-card p{ font-size:11px; line-height:1.3; }
+  .table-wrap{ margin:14px 26px 0; box-shadow:none; }
+  thead th{ padding:6px 12px; font-size:9.5px; }
+  tbody td{ padding:7px 12px; font-size:11.5px; }
+  .pattern-name{ font-size:11.5px; margin-bottom:3px; }
+  .blinks .on, .blinks .off{ width:7px; height:7px; }
+  .blinks .gap{ width:10px; }
+  td.meaning b{ font-size:11.5px; margin-bottom:1px; }
+  td.meaning span{ font-size:10.5px; }
+  .note{ margin:14px 26px 0; padding:10px 14px; gap:8px; }
+  .note svg{ width:16px; height:16px; }
+  .note p{ font-size:11px; }
+
+  @media print{
+    .doc-toolbar{ display:none; }
+    .page-divider{ display:none; }
+    body{ background:#fff; }
+    .page{ box-shadow:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-toolbar">
+  <button class="print-btn" id="printBtn" type="button">Print this guide (2 pages)</button>
+</div>
+
+<section class="page" id="mounting">
+  <header>
+    <p class="eyebrow">Marquette Transportation &middot; Field Install</p>
+    <h1>CamPi Camera<br>Mounting Card</h1>
+    <p class="subhead">How to mount the deck camera on the RAM Tough-Claw and confirm it has power. No tools beyond your hands are required.</p>
+  </header>
+
+  <div class="intro">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="2" y="10" width="24" height="18" rx="2" stroke="#5B6B74" stroke-width="2"/><path d="M9 10L12 5H18L21 10" stroke="#5B6B74" stroke-width="2" stroke-linejoin="round"/><circle cx="14" cy="19" r="6" stroke="#5B6B74" stroke-width="2"/><rect x="24" y="14" width="7" height="5" rx="1" stroke="#5B6B74" stroke-width="2"/></svg>
+    <p><strong>What you're installing:</strong> a weatherproof camera and control box, held by a RAM&reg; Tough-Claw&trade; clamp mount. The clamp does the gripping &mdash; the two ball-joint arms below it do the aiming.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h2>Open the claw</h2>
+        <p>Back off the two wing knobs on the Tough-Claw base until the jaws open wide enough to fit around the rail.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h2>Clamp it to the rail</h2>
+        <p>Pick a straight, solid section with a clear view of what you want recorded &mdash; avoid rail that flexes, gets stepped on, or is used for tie-off.</p>
+        <div class="photo-ref">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
+          <span class="label">Reference photo &mdash; <b>wide shot of the mounted unit</b></span>
+        </div>
+        <p>Close the jaws around the rail and hand-tighten both wing knobs as tight as you can get them. Push and pull on the mount &mdash; it should not move or twist at all.</p>
+        <div class="photo-ref">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
+          <span class="label">Reference photo &mdash; <b>Tough-Claw closed on the rail, close-up</b></span>
+        </div>
+        <div class="caution">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L17 15.5H1L9 2Z" stroke="#A23E2C" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 7.5V10.5" stroke="#A23E2C" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="13" r="0.9" fill="#A23E2C"/></svg>
+          <p><span class="cap">Check it again after day one</span>Vibration can work a fresh clamp loose. Re-check both wing knobs after the unit's first day underway.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h2>Aim the camera</h2>
+        <p>Loosen the ball joints on the two swivel arms just enough to move them, fine-tune the lens angle, then tighten both joints firmly so the camera can't sag or spin loose.</p>
+        <div class="photo-ref">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
+          <span class="label">Reference photo &mdash; <b>camera &amp; enclosure on the double-arm</b></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h2>Route the cable</h2>
+        <p>Keep the cable clear of doors, ladders, and mooring lines, and secure any slack.</p>
+      </div>
+    </div>
+
+    <div class="step power-check">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h2>Power up &amp; confirm</h2>
+        <p>Flip the toggle switch on the power pigtail &mdash; it comes out the bottom of the box &mdash; to ON.</p>
+        <div class="photo-ref">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
+          <span class="label">Reference photo &mdash; <b>toggle switch on the power pigtail, set to ON</b></span>
+        </div>
+        <p>Then check the button on the <strong>bottom of the box</strong>: once the unit has power, the ring around it glows <strong>green</strong>. That's the only check you need &mdash; the camera connects and starts recording on its own.</p>
+        <div class="indicator">
+          <div class="ring"></div>
+          <div class="txt">Button ring lit <b>GREEN</b> &nbsp;=&nbsp; unit is powered</div>
+        </div>
+        <div class="photo-ref">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
+          <span class="label">Reference photo &mdash; <b>close-up of the green-lit button, underside of the box</b></span>
+        </div>
+        <div class="caution">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L17 15.5H1L9 2Z" stroke="#A23E2C" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 7.5V10.5" stroke="#A23E2C" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="13" r="0.9" fill="#A23E2C"/></svg>
+          <p><span class="cap">Leave the button alone</span>It's for service use only and isn't part of setup &mdash; no need to press it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="rule"></div>
+    <p>Green light not on? Check the power connection first. Still out &mdash; contact IT: <a href="mailto:esmith@marquettetrans.com">esmith@marquettetrans.com</a></p>
+  </footer>
+</section>
+
+<div class="page-divider"><span>Page 2</span></div>
+
+<section class="page page-break" id="status-light">
+  <header>
+    <p class="eyebrow">Marquette Transportation &middot; Field Reference</p>
+    <h1>Status Light Reference</h1>
+    <p class="subhead">What the small red light on the camera enclosure is telling you, and what to do about it.</p>
+  </header>
+
+  <div class="lights">
+    <div class="light-card">
+      <div class="dot green"></div>
+      <div>
+        <h3>Button ring &mdash; green</h3>
+        <p>Bottom of the box. Green means the unit has power &mdash; see page 1 for setup.</p>
+      </div>
+    </div>
+    <div class="light-card">
+      <div class="dot red"></div>
+      <div>
+        <h3>Status light &mdash; red</h3>
+        <p>Top of the enclosure, by the Wi-Fi antenna. Reports system health &mdash; this page. Hard to see in direct sun; cup a hand over it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Pattern</th>
+          <th>What it means</th>
+          <th>What to do</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ok">
+          <td>
+            <div class="pattern-name">Solid &mdash; steady on</div>
+            <div class="blinks"><span class="on"></span></div>
+          </td>
+          <td class="meaning"><b>Normal</b><span>Recording, camera reachable, storage OK, temperature normal.</span></td>
+          <td class="action">No action needed.</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="pattern-name">Slow, even blink (~1s)</div>
+            <div class="blinks"><span class="on"></span><span class="gap"></span><span class="off"></span><span class="gap"></span><span class="on"></span><span class="gap"></span><span class="off"></span></div>
+          </td>
+          <td class="meaning"><b>Degraded</b><span>Camera and recording are fine, but the unit has no vessel Wi-Fi/network connection.</span></td>
+          <td class="action">No urgent action. Contact IT if it stays this way for more than a day.</td>
+        </tr>
+        <tr class="fault">
+          <td>
+            <div class="pattern-name">2 quick flashes, pause, repeat</div>
+            <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="gap"></span><span class="gap"></span></div>
+          </td>
+          <td class="meaning"><b>Fault &mdash; camera unreachable</b><span>The control box can't reach the camera itself.</span></td>
+          <td class="action">Contact IT.</td>
+        </tr>
+        <tr class="fault">
+          <td>
+            <div class="pattern-name">3 quick flashes, pause, repeat</div>
+            <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="gap"></span></div>
+          </td>
+          <td class="meaning"><b>Fault &mdash; recording stalled</b><span>Camera is reachable, but the video isn't writing correctly.</span></td>
+          <td class="action">Contact IT.</td>
+        </tr>
+        <tr class="fault">
+          <td>
+            <div class="pattern-name">4 quick flashes, pause, repeat</div>
+            <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span></div>
+          </td>
+          <td class="meaning"><b>Fault &mdash; storage offline</b><span>Nothing is being recorded right now.</span></td>
+          <td class="action">Contact IT right away.</td>
+        </tr>
+        <tr class="fault">
+          <td>
+            <div class="pattern-name">5 quick flashes, pause, repeat</div>
+            <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span></div>
+          </td>
+          <td class="meaning"><b>Fault &mdash; running hot</b><span>The camera electronics or enclosure are over temperature.</span></td>
+          <td class="action">Check nothing is blocking airflow or the box isn't in direct sun, then contact IT.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#5B6B74" stroke-width="1.6"/><path d="M10 6.5V11" stroke="#5B6B74" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="13.6" r="0.9" fill="#5B6B74"/></svg>
+    <p>A brief double- or triple-flash right before the unit reboots or shuts down (for example, right after someone presses the button) is normal and isn't a fault &mdash; it settles once the unit finishes restarting.</p>
+  </div>
+
+  <footer>
+    <div class="rule"></div>
+    <p>Not sure what you're seeing, or a fault won't clear? Contact IT: <a href="mailto:esmith@marquettetrans.com">esmith@marquettetrans.com</a></p>
+  </footer>
+</section>
+
+<script>
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+</script>
+</body>
+</html>
