@@ -19,7 +19,7 @@
   --rust:#A23E2C;
   --rust-bg:#F6E7E2;
   --red:#B5342A;
-  --red-bg:#FBEDEB;
+  --red-bg:#F2C2B8;
   --line:#D4DBD9;
 }
 
@@ -318,6 +318,11 @@ tbody td{
 tbody tr:last-child td{ border-bottom:none; }
 tbody tr.fault{ background:var(--red-bg); }
 tbody tr.ok{ background:var(--green-bg); }
+/* Redundant non-color cue for grayscale/B&W printing: a solid left bar per row status,
+   on top of the background tint and the already-color-independent bold text label
+   ("Normal" / "Fault -- ..."). Presence + bar color survive even if hue is lost. */
+tbody tr.fault td:first-child{ border-left:4px solid var(--red); }
+tbody tr.ok td:first-child{ border-left:4px solid var(--green); }
 
 .pattern-name{
   font-family:'Oswald',sans-serif;
@@ -369,6 +374,15 @@ tr.fault td.action{ color:var(--red); }
 
 /* ---------- print ---------- */
 @media print{
+  /* Without this, Chrome/Edge/Firefox drop ALL background-color and box-shadow when
+     printing unless the user manually checks "Background graphics" in the print dialog --
+     silently strips the status LED dots, step-number boxes, and row tints down to blank
+     white. This forces them to print regardless of that setting. */
+  *{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+    color-adjust:exact !important;
+  }
   body{ background:#fff; }
   .toolbar{ display:none; }
   .sheet{ max-width:100%; }
