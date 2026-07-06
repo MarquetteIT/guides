@@ -30,36 +30,33 @@
   .page-divider::before, .page-divider::after{ content:""; flex:1; border-top:1.5px dashed var(--steel-soft); }
 
   /* ---- shared compact tuning for both pages ---- */
-  body{ font-size:12.5px; line-height:1.32; }
-  header{ padding:14px 26px 11px; }
+  body{ font-size:13.5px; line-height:1.36; }
+  header{ padding:18px 26px 14px; }
   header::after{ display:none; }
-  .eyebrow{ font-size:9.5px; margin-bottom:3px; }
-  h1{ font-size:21px; max-width:none; margin-bottom:3px; }
-  .subhead{ font-size:11.5px; max-width:64ch; }
+  .eyebrow{ font-size:10px; margin-bottom:4px; }
+  h1{ font-size:24px; max-width:none; margin-bottom:4px; }
+  .subhead{ font-size:12.5px; max-width:64ch; }
   .toolbar{ display:none; }
-  footer{ padding:10px 26px 0 26px; font-size:10px; }
-  footer .rule{ margin-bottom:7px; }
-  .page > footer{ padding-bottom:12px; }
+  footer{ padding:12px 26px 0 26px; font-size:10.5px; }
+  footer .rule{ margin-bottom:8px; }
+  .page > footer{ padding-bottom:14px; }
 
   /* ---- mounting page ---- */
-  .intro{ margin:8px 26px 0; padding:7px 14px; gap:10px; }
-  .intro svg{ width:22px; height:22px; }
-  .steps{ padding:8px 26px 0; gap:4px; }
-  .step{ grid-template-columns:34px 1fr; }
-  .step-num{ font-size:14px; }
-  .step-body{ padding:5px 12px 6px; }
-  .step h2{ font-size:12px; margin-bottom:2px; }
-  .step p{ margin-bottom:3px; }
-  .photo-ref{ margin-top:3px; padding:3px 6px; gap:5px; }
-  .photo-ref svg{ width:12px; height:12px; }
-  .photo-ref .label{ font-size:9px; }
-  .caution{ margin-top:3px; padding:4px 8px; gap:5px; }
-  .caution svg{ width:12px; height:12px; }
-  .caution p{ font-size:10.5px; }
-  .caution .cap{ font-size:9px; margin-bottom:1px; }
-  .power-check .indicator{ margin-top:3px; padding:4px 8px; gap:6px; }
-  .ring{ width:15px; height:15px; border-width:3px; }
-  .indicator .txt{ font-size:10.5px; }
+  .intro{ margin:10px 26px 0; padding:10px 16px; gap:12px; }
+  .intro svg{ width:24px; height:24px; }
+  .steps{ padding:10px 26px 0; gap:7px; }
+  .step{ grid-template-columns:36px 1fr; }
+  .step-num{ font-size:15px; }
+  .step-body{ padding:7px 14px 8px; }
+  .step h2{ font-size:13px; margin-bottom:3px; }
+  .step p{ margin-bottom:4px; }
+  .caution{ margin-top:5px; padding:5px 10px; gap:6px; }
+  .caution svg{ width:13px; height:13px; }
+  .caution p{ font-size:11.5px; }
+  .caution .cap{ font-size:9.5px; margin-bottom:1px; }
+  .power-check .indicator{ margin-top:5px; padding:5px 10px; gap:7px; }
+  .ring{ width:17px; height:17px; border-width:3px; }
+  .indicator .txt{ font-size:11.5px; }
 
   /* ---- status light page ---- */
   .lights{ padding:14px 26px 0; gap:10px; }
@@ -110,7 +107,7 @@
       <div class="step-num">1</div>
       <div class="step-body">
         <h2>Open the claw</h2>
-        <p>Back off the two wing knobs on the Tough-Claw base until the jaws open wide enough to fit around the rail.</p>
+        <p>Loosen the two wing knobs on the Tough-Claw base until the jaws open wide enough to fit around the rail.</p>
       </div>
     </div>
 
@@ -118,19 +115,10 @@
       <div class="step-num">2</div>
       <div class="step-body">
         <h2>Clamp it to the rail</h2>
-        <p>Pick a straight, solid section with a clear view of what you want recorded &mdash; avoid rail that flexes, gets stepped on, or is used for tie-off.</p>
-        <div class="photo-ref">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
-          <span class="label">Reference photo &mdash; <b>wide shot of the mounted unit</b></span>
-        </div>
-        <p>Close the jaws around the rail and hand-tighten both wing knobs as tight as you can get them. Push and pull on the mount &mdash; it should not move or twist at all.</p>
-        <div class="photo-ref">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
-          <span class="label">Reference photo &mdash; <b>Tough-Claw closed on the rail, close-up</b></span>
-        </div>
+        <p>Pick a straight, solid section of rail with a clear view of what you want recorded &mdash; avoid rail that flexes, gets stepped on, or is used for tie-off. Close the jaws around it and hand-tighten both wing knobs as tight as you can. Push and pull on the mount afterward &mdash; it should not move or twist at all.</p>
         <div class="caution">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L17 15.5H1L9 2Z" stroke="#A23E2C" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 7.5V10.5" stroke="#A23E2C" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="13" r="0.9" fill="#A23E2C"/></svg>
-          <p><span class="cap">Check it again after day one</span>Vibration can work a fresh clamp loose. Re-check both wing knobs after the unit's first day underway.</p>
+          <p><span class="cap">Check it again after day one</span>Re-check both wing knobs after the unit's first day underway &mdash; vibration can loosen a fresh clamp.</p>
         </div>
       </div>
     </div>
@@ -139,11 +127,7 @@
       <div class="step-num">3</div>
       <div class="step-body">
         <h2>Aim the camera</h2>
-        <p>Loosen the ball joints on the two swivel arms just enough to move them, fine-tune the lens angle, then tighten both joints firmly so the camera can't sag or spin loose.</p>
-        <div class="photo-ref">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
-          <span class="label">Reference photo &mdash; <b>camera &amp; enclosure on the double-arm</b></span>
-        </div>
+        <p>Loosen the ball joints on the two swivel arms, point the lens where you want it, then tighten both joints firmly so it can't sag or spin loose.</p>
       </div>
     </div>
 
@@ -159,19 +143,10 @@
       <div class="step-num">5</div>
       <div class="step-body">
         <h2>Power up &amp; confirm</h2>
-        <p>Flip the toggle switch on the power pigtail &mdash; it comes out the bottom of the box &mdash; to ON.</p>
-        <div class="photo-ref">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
-          <span class="label">Reference photo &mdash; <b>toggle switch on the power pigtail, set to ON</b></span>
-        </div>
-        <p>Then check the button on the <strong>bottom of the box</strong>: once the unit has power, the ring around it glows <strong>green</strong>. That's the only check you need &mdash; the camera connects and starts recording on its own.</p>
+        <p>Flip the toggle switch on the power pigtail &mdash; bottom of the box &mdash; to ON. Then check the button, also on the bottom: the ring around it glows <strong>green</strong> once powered. That's the only check you need &mdash; the camera connects and starts recording on its own.</p>
         <div class="indicator">
           <div class="ring"></div>
           <div class="txt">Button ring lit <b>GREEN</b> &nbsp;=&nbsp; unit is powered</div>
-        </div>
-        <div class="photo-ref">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="5.5" width="17" height="12" rx="1.5" stroke="#5B6B74" stroke-width="1.6"/><path d="M6 5.5L7.5 3H12.5L14 5.5" stroke="#5B6B74" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="3.4" stroke="#5B6B74" stroke-width="1.6"/></svg>
-          <span class="label">Reference photo &mdash; <b>close-up of the green-lit button, underside of the box</b></span>
         </div>
         <div class="caution">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L17 15.5H1L9 2Z" stroke="#A23E2C" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 7.5V10.5" stroke="#A23E2C" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="13" r="0.9" fill="#A23E2C"/></svg>
@@ -237,7 +212,7 @@
             <div class="blinks"><span class="on"></span><span class="gap"></span><span class="off"></span><span class="gap"></span><span class="on"></span><span class="gap"></span><span class="off"></span></div>
           </td>
           <td class="meaning"><b>Degraded</b><span>Camera and recording are fine, but the unit has no vessel Wi-Fi/network connection.</span></td>
-          <td class="action">No urgent action. Contact IT if it stays this way for more than a day.</td>
+          <td class="action">Try one button press (clean reboot, not the pigtail switch &mdash; see note). Contact IT if it stays this way for more than a day.</td>
         </tr>
         <tr class="fault">
           <td>
@@ -245,7 +220,7 @@
             <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="gap"></span><span class="gap"></span></div>
           </td>
           <td class="meaning"><b>Fault &mdash; camera unreachable</b><span>The control box can't reach the camera itself.</span></td>
-          <td class="action">Contact IT.</td>
+          <td class="action">Try one button press (clean reboot, not the pigtail switch &mdash; see note). Contact IT if it doesn't clear.</td>
         </tr>
         <tr class="fault">
           <td>
@@ -253,7 +228,7 @@
             <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="gap"></span></div>
           </td>
           <td class="meaning"><b>Fault &mdash; recording stalled</b><span>Camera is reachable, but the video isn't writing correctly.</span></td>
-          <td class="action">Contact IT.</td>
+          <td class="action">Try one button press (clean reboot, not the pigtail switch &mdash; see note). Contact IT if it doesn't clear.</td>
         </tr>
         <tr class="fault">
           <td>
@@ -273,6 +248,11 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="note">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#5B6B74" stroke-width="1.6"/><path d="M10 6.5V11" stroke="#5B6B74" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="13.6" r="0.9" fill="#5B6B74"/></svg>
+    <p><strong>Reboot with the button, not the pigtail switch</strong> &mdash; the switch cuts power instantly and can corrupt the current recording; the button shuts the recorder down cleanly first. Press it <strong>once only</strong>: two quick presses wipes the saved Wi-Fi and switches to a local hotspot.</p>
   </div>
 
   <div class="note">

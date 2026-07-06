@@ -9,32 +9,32 @@
   /* Compact single-page variant: same tokens/fonts/classes as the screen version, just
      tightened everywhere so the whole card fits one printed Letter page. */
   @page{ size:letter; margin:0.4in; }
-  body{ font-size:14.5px; line-height:1.42; }
+  body{ font-size:13.5px; line-height:1.36; }
   .sheet{ max-width:760px; }
-  header{ padding:20px 28px 16px; }
+  header{ padding:15px 28px 12px; }
   header::after{ display:none; }
-  .eyebrow{ font-size:11px; margin-bottom:4px; }
-  h1{ font-size:27px; max-width:none; margin-bottom:5px; }
-  .subhead{ font-size:13.5px; max-width:62ch; }
-  .toolbar{ padding:10px 28px 0; }
-  .lights{ padding:16px 28px 0; gap:12px; }
-  .light-card{ padding:12px 14px; gap:12px; }
-  .dot{ width:16px; height:16px; margin-top:1px; }
-  .light-card h3{ font-size:13px; margin-bottom:4px; }
-  .light-card p{ font-size:12px; line-height:1.35; }
-  .table-wrap{ margin:16px 28px 0; }
-  thead th{ padding:8px 14px; font-size:10.5px; }
-  tbody td{ padding:9px 14px; font-size:12.5px; }
-  .pattern-name{ font-size:12.5px; margin-bottom:4px; }
+  .eyebrow{ font-size:10.5px; margin-bottom:3px; }
+  h1{ font-size:23px; max-width:none; margin-bottom:4px; }
+  .subhead{ font-size:12.5px; max-width:62ch; }
+  .toolbar{ padding:8px 28px 0; }
+  .lights{ padding:12px 28px 0; gap:10px; }
+  .light-card{ padding:9px 12px; gap:10px; }
+  .dot{ width:15px; height:15px; margin-top:1px; }
+  .light-card h3{ font-size:12px; margin-bottom:3px; }
+  .light-card p{ font-size:11px; line-height:1.32; }
+  .table-wrap{ margin:12px 28px 0; }
+  thead th{ padding:6px 12px; font-size:10px; }
+  tbody td{ padding:7px 12px; font-size:11.5px; }
+  .pattern-name{ font-size:11.5px; margin-bottom:3px; }
   .blinks .on, .blinks .off{ width:8px; height:8px; }
   .blinks .gap{ width:12px; }
-  td.meaning b{ font-size:12.5px; margin-bottom:2px; }
-  td.meaning span{ font-size:11.5px; }
-  .note{ margin:16px 28px 0; padding:12px 16px; gap:10px; }
-  .note svg{ width:18px; height:18px; }
-  .note p{ font-size:12px; }
-  footer{ padding:18px 28px 0; font-size:12px; }
-  footer .rule{ margin-bottom:12px; }
+  td.meaning b{ font-size:11.5px; margin-bottom:1px; }
+  td.meaning span{ font-size:10.5px; }
+  .note{ margin:10px 28px 0; padding:8px 14px; gap:8px; }
+  .note svg{ width:16px; height:16px; }
+  .note p{ font-size:11px; }
+  footer{ padding:12px 28px 0; font-size:11px; }
+  footer .rule{ margin-bottom:8px; }
 </style>
 </head>
 <body>
@@ -91,7 +91,7 @@
             <div class="blinks"><span class="on"></span><span class="gap"></span><span class="off"></span><span class="gap"></span><span class="on"></span><span class="gap"></span><span class="off"></span></div>
           </td>
           <td class="meaning"><b>Degraded</b><span>Camera and recording are fine, but the unit has no vessel Wi-Fi/network connection.</span></td>
-          <td class="action">No urgent action. Contact IT if it stays this way for more than a day.</td>
+          <td class="action">Try one button press (clean reboot, not the pigtail switch &mdash; see note). Contact IT if it stays this way for more than a day.</td>
         </tr>
         <tr class="fault">
           <td>
@@ -99,7 +99,7 @@
             <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="gap"></span><span class="gap"></span></div>
           </td>
           <td class="meaning"><b>Fault &mdash; camera unreachable</b><span>The control box can't reach the camera itself.</span></td>
-          <td class="action">Contact IT.</td>
+          <td class="action">Try one button press (clean reboot, not the pigtail switch &mdash; see note). Contact IT if it doesn't clear.</td>
         </tr>
         <tr class="fault">
           <td>
@@ -107,7 +107,7 @@
             <div class="blinks"><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="gap"></span></div>
           </td>
           <td class="meaning"><b>Fault &mdash; recording stalled</b><span>Camera is reachable, but the video isn't writing correctly.</span></td>
-          <td class="action">Contact IT.</td>
+          <td class="action">Try one button press (clean reboot, not the pigtail switch &mdash; see note). Contact IT if it doesn't clear.</td>
         </tr>
         <tr class="fault">
           <td>
@@ -127,6 +127,11 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="note">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#5B6B74" stroke-width="1.6"/><path d="M10 6.5V11" stroke="#5B6B74" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="13.6" r="0.9" fill="#5B6B74"/></svg>
+    <p><strong>Reboot with the button, not the pigtail switch</strong> &mdash; the switch cuts power instantly and can corrupt the current recording; the button shuts the recorder down cleanly first. Press it <strong>once only</strong>: two quick presses wipes the saved Wi-Fi and switches to a local hotspot.</p>
   </div>
 
   <div class="note">
